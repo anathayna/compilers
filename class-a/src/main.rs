@@ -1,5 +1,5 @@
 fn main() {
-    println!("Hello, world!");
+    println!("hellou, world!");
 }
 
 // cargo new class-a --bin

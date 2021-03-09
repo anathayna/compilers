@@ -19,7 +19,13 @@ fn main() {
 
         println!("you guessed: {}", guess);
 
-        let guess: u32 = guess.trim().parse::<u32>().expect("please type a number!");
+        let guess: u32 = match guess.trim().parse() {
+            Ok(num) => num,
+            Err(_) => {
+                println!("invalid number, try again");
+                continue;
+            }
+        };
 
         match guess.cmp(&secret_number) {
             Ordering::Less => println!("too small! try again:"),

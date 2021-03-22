@@ -1,5 +1,15 @@
-2 + 8 - 10
-4 - 5 + 9
-1 * 5 - 0
-16 / 4 (6 * 8)
-6  +3 - 5
+example: 5 + 3*(2-5)/4 +3
+return:
+Número(5)
+Operador(Soma)
+Número(3)
+Operador(Multiplicação)
+Pontuação(Abre Parênteses)
+Número(2)
+Operador(Subtração)
+Número(5)
+Pontuação(Fecha Parênteses)
+Operador(Divisão)
+Número(4)
+Operador(Soma)
+Número(3)

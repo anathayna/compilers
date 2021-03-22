@@ -1,0 +1,5 @@
+[workspace]
+    members = [
+        "lang42cli",
+        "lang42lib",
+    ]

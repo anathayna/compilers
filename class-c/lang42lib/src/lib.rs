@@ -1,3 +1,7 @@
+pub fn oi() {
+    println!("oi!");
+}
+
 #[cfg(test)]
 mod tests {
     #[test]

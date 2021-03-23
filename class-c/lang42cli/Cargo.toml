@@ -7,5 +7,6 @@ edition = "2018"
 [dependencies]
 log="0.4.14"
 env_logger="0.8.3"
+dotenv="0.15.0"
 
 lang42lib={path="../lang42lib"}

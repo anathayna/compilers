@@ -1,3 +1,5 @@
+mod args;
+
 fn main() {
     init();
     std::env::args();

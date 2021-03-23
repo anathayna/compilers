@@ -1,1 +1,7 @@
-pub const VERSION: &str = "0.1.0";
+#[allow(dead_code)]
+#[derive(Debug)]
+pub enum Argumentos {
+    Inline,
+    //TODO:
+    File,
+}

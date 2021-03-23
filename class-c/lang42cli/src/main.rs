@@ -1,9 +1,14 @@
 fn main() {
-    env_logger::init();
+    init();
+    std::env::args();
     log::trace!("init main func");
     //log::info!("aqui!");
     lang42lib::version();
     log::trace!("end main func");
+}
+
+fn init() {
+    env_logger::init();
 }
 
 //RUST_LOG=info target/debug/lang42cli

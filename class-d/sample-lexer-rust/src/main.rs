@@ -1,3 +1,11 @@
+use std::env;
+use std::process;
+
 fn main() {
-    println!("Hello, world!");
+    let argv: Vec<String> = env::args().collect();
+    let argc = argv.len();
+    if argc != 2 {
+        eprintln!("sintaxe: ehbasic <expressão>");
+        process::exit(1);
+    }
 }

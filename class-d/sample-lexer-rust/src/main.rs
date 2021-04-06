@@ -16,3 +16,4 @@ fn main() {
 }
 
 // cargo run -- 9
+// cargo run 6+6

@@ -18,12 +18,19 @@ enum ItemLexico {
     Numero(u64)
 }
 
-fn lexer(exp: &String) -> Vec<ItemLexico> {
+fn lexer(exp: &String) -> Result<Vec<ItemLexico>, String> {
     //unimplemented!();
     let mut r = Vec::new();
-    let numero = exp.parse().unwrap();
-    r.push(ItemLexico::Numero(numero));
-    r
+    let numero_result = exp.parse();
+    match numero_result {
+        Ok(numero) => {
+            r.push(ItemLexico::Numero(numero));
+            return Ok(r);
+        }
+        Err(_) => {
+            return Err(format!("valor inesperado: {}", exp));
+        }
+    }
 }
 
 // cargo run -- 9

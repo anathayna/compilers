@@ -1,19 +1,15 @@
 use std::env;
-use std::process;
+use crate::lexer::avaliar;
 
 mod lexer;
 
 fn main() {
-    let argv: Vec<String> = env::args().collect();
-    let argc = argv.len();
-    if argc != 2 {
-        eprintln!("sintaxe: ehbasic <expressão>");
-        process::exit(1);
+    let codigo = env::args().nth(1).expect("expressão não fornecida");
+    if let Ok(resultado) = avaliar(&codigo) {
+        println!("expressão {} = {}", codigo, resultado);
+    } else {
+        eprintln!("não foi possível avaliar a expressão");
     }
-
-    let simbolos = lexer::lexer(&argv[1]);
-    println!("{:?}", simbolos)
 }
 
-// cargo run -- 9
 // cargo run 6+6

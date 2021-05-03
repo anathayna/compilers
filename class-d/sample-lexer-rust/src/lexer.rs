@@ -25,7 +25,7 @@ fn lexer(input: &str) -> Result<Vec<ItemLexico>, String> {
                 iterador.next();
             }
             _ => {
-                return Err(format!("Caracter inesperado: {}", c));
+                return Err(format!("caracter inesperado: {}", c));
             }
         }
     }
@@ -72,10 +72,10 @@ fn expressao(tokens: &Vec<ItemLexico>, mut delta: usize) -> Result<i64, String> 
     let &operador = match tokens.get(delta) {
         Some(ItemLexico::Operador(op)) => op,
         token @ Some(_) => {
-            return Err(format!("Token não esperado: {:?}", token));
+            return Err(format!("token não esperado: {:?}", token));
         }
         None => {
-            return Err(format!("Expressão incompleta!"));
+            return Err(format!("expressão incompleta!"));
         }
     };
 
@@ -90,7 +90,7 @@ fn expressao(tokens: &Vec<ItemLexico>, mut delta: usize) -> Result<i64, String> 
         '+' => resultado = n1 + n2,
         _ => {
             return Err(format!(
-                "Símbolo não é um operador reconhecido: {:?}",
+                "símbolo não é um operador reconhecido: {:?}",
                 operador
             ));
         }
@@ -103,11 +103,12 @@ fn termo(tokens: &Vec<ItemLexico>, delta: usize) -> Result<i64, String> {
     let &n = match tokens.get(delta + 0) {
         Some(ItemLexico::Inteiro(n)) => n,
         token @ Some(_) => {
-            return Err(format!("Token não esperado: {:?}", token));
+            return Err(format!("token não esperado: {:?}", token));
         }
         None => {
-            return Err(format!("Expressão incompleta!"));
+            return Err(format!("expressão incompleta!"));
         }
     };
+    
     Ok(n)
 }

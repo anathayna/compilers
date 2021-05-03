@@ -2,9 +2,10 @@ extern crate bnf;
 use bnf::Grammar;
 
 fn main() {
-    let input =
-        "<dna> ::= <base> | <base> <dna>
-        <base> ::= \"A\" | \"C\" | \"G\" | \"T\"";
+    let input = r#"
+        <expressao> ::= <termo> | <termo> "+" <termo>
+        <termo> ::= "0" | "1"
+    "#;
     let grammar: Grammar = input.parse().unwrap();
     let sentence = grammar.generate();
     match sentence {

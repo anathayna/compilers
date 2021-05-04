@@ -4,7 +4,9 @@ use bnf::Grammar;
 fn main() {
     let input = r#"
         <expressao> ::= <termo> | <termo> "+" <termo>
-        <termo> ::= "0" | "1"
+        <termo> ::= <fator>
+        <fator> ::= <variavel> | <expressao>
+        <variavel> ::= "0" | "1"
     "#;
     let grammar: Grammar = input.parse().unwrap();
     let sentence = grammar.generate();
